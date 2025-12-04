@@ -5,10 +5,18 @@ services:
     plan: free
     branch: main
     envVars:
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: emp-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: emp-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: emp-db
+          property: databaseName
       - key: DB_USERNAME
         fromDatabase:
           name: emp-db
